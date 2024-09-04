@@ -1,0 +1,19 @@
+{
+  "name": "counter-map-api",
+  "version": "1.0.0",
+  "description": "API routes and database to build a counter map from. This includes an endpoint to verify data being added to the site is valid.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "geolocate",
+    "indigenous",
+    "sovereignty",
+    "countermap",
+    "antiuranium",
+    "mining"
+  ],
+  "author": "Leila Al-hemali Ayad",
+  "license": "ISC"
+}

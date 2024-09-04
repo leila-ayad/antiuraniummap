@@ -1,54 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anti-Uranium Map</title>
-    <style>
-      /* Basic styles for layout */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-      }
-
-      #map {
-        flex: 1;
-        background-color: #e5e5e5;
-        height: 70%;
-      }
-
-      #form-container {
-        flex: 1;
-        padding: 20px;
-        background-color: #f4f4f4;
-        height: 30%;
-      }
-    </style>
+    <title>Vite + React</title>
   </head>
   <body>
-    <div id="map">
-      <!-- Map will be displayed here -->
-    </div>
-
-    <div id="form-container">
-      <!-- Form will be displayed here -->
-      <form>
-        <label for="location">Location:</label><br />
-        <input type="text" id="location" name="location" /><br /><br />
-
-        <label for="story">Story:</label><br />
-        <textarea id="story" name="story" rows="4" cols="50"></textarea
-        ><br /><br />
-
-        <label for="photo">Photo:</label><br />
-        <input type="file" id="photo" name="photo" /><br /><br />
-
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
