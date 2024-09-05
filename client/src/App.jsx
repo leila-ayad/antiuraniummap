@@ -8,26 +8,31 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div id="map"></div>
+
+      <div id="form-container">
+        <form>
+          <label for="location">Location:</label>
+          <br />
+          <input type="text" id="location" name="location" />
+          <br />
+          <br />
+
+          <label for="story">Story:</label>
+          <br />
+          <textarea id="story" name="story" rows="4" cols="50"></textarea>
+          <br />
+          <br />
+
+          <label for="photo">Photo:</label>
+          <br />
+          <input type="file" id="photo" name="photo" />
+          <br />
+          <br />
+
+          <input type="submit" value="Submit" />
+        </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
