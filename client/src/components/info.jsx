@@ -1,7 +1,7 @@
 export const Info = () => {
   return (
     <div id="info-container">
-      <p>A sssd;fjsdflkfscmnslfhwo</p>
+      <p>Info div will go here</p>
     </div>
   );
 };
