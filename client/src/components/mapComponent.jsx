@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Map } from "maplibre-gl";
+import { Map, Popup } from "maplibre-gl";
 import supabase from "../../config/supabaseClient";
 
 export const MapComponent = () => {
@@ -16,6 +16,7 @@ export const MapComponent = () => {
       }
       if (data) {
         setStories(data);
+        console.log(stories);
         setFetchError(null);
         return stories;
       }
@@ -40,7 +41,9 @@ export const MapComponent = () => {
         const features = stories.map((story) => ({
           type: "Feature",
           properties: {
-            description: `<p>${story.story_body}</p>`,
+            description: `<div class="maplibregl-popup>
+            <p class="maplibregl-content">${story.story_body}</p>
+          </div>`,
           },
           geometry: {
             type: "Point",
@@ -64,6 +67,26 @@ export const MapComponent = () => {
             "icon-overlap": "always",
             "icon-size": 1,
           },
+        });
+
+        map.on("click", "places-layer", (e) => {
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const description = e.features[0].properties.description;
+          console.log(description);
+          // Create a popup
+          let popup = new Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+          console.log(popup);
+        });
+
+        map.on("mouseenter", "places-layer", () => {
+          map.getCanvas().style.cursor = "pointer";
+        });
+
+        map.on("mouseleave", "places-layer", () => {
+          map.getCanvas().style.cursor = "";
         });
       });
 
