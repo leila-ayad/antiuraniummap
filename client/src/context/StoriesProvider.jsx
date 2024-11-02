@@ -1,6 +1,6 @@
 import { useReducer, useEffect } from "react";
 import { StoriesContext } from "./StoriesContext.jsx";
-import { StoriesReducer } from "../reducers/StoriesReducer.jsx";
+import { storiesReducer } from "../reducers/StoriesReducer.jsx";
 import supabase from "../../config/supabaseClient";
 
 export const StoriesProvider = ({ children }) => {

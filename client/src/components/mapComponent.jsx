@@ -57,7 +57,6 @@ export const MapComponent = () => {
       map.on("click", "places-layer", (e) => {
         const coordinates = e.features[0].geometry.coordinates.slice();
         const description = e.features[0].properties.description;
-        console.log(description);
         // Create a popup
         let popup = new Popup()
           .setLngLat(coordinates)

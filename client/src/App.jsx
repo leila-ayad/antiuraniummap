@@ -1,6 +1,6 @@
 import "./App.css";
 import { Info } from "./components/info";
-import { AddStory } from "./components/addStory";
+import { StoryForm } from "./components/storyForm";
 import { MapComponent } from "./components/mapComponent";
 import { StoriesProvider } from "./context/StoriesProvider.jsx";
 function App() {
@@ -9,11 +9,11 @@ function App() {
       <div id="title-container">
         <Info />
         <h2>Anti-Uranium Mapping Project</h2>
-        <AddStory />
-        <StoriesProvider>
-          <MapComponent />
-        </StoriesProvider>
+        <StoryForm />
       </div>
+      <StoriesProvider>
+        <MapComponent />
+      </StoriesProvider>
     </>
   );
 }

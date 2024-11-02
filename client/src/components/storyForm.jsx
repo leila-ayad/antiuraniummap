@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const AddStory = () => {
+export const StoryForm = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const toggleFormVisibility = () => {
