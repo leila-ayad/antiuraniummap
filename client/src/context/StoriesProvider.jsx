@@ -9,7 +9,7 @@ export const StoriesProvider = ({ children }) => {
     fetchError: null,
   };
 
-  const [state, dispatch] = useReducer(StoriesReducer, initialState);
+  const [state, dispatch] = useReducer(storiesReducer, initialState);
 
   useEffect(() => {
     const fetchStories = async () => {
