@@ -34,7 +34,7 @@ export const MapComponent = () => {
         },
         geometry: {
           type: "Point",
-          coordinates: [story.lon, story.lat],
+          coordinates: [story.lng, story.lat],
         },
       }));
 

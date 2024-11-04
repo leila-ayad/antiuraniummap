@@ -24,11 +24,11 @@ export const StoryForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data, error } = await supabase.from("staging_stories").insert({
+      const { data, error } = await supabase.from("stories").insert({
         id: createGUID(),
-        lat: 23,
-        lon: 234,
-        story_body: "blakahd",
+        lat: formData.lat,
+        lng: formData.lng,
+        story_body: formData.story,
         photo_ids: null,
       });
 
