@@ -1,11 +1,11 @@
-import { useState, useContext } from "react";
-import { FormContext } from "../context/FormContext";
+import { useState } from "react";
+import { useForm } from "../context/FormContext";
 import { createGUID } from "../utils/helpers.jsx";
 import supabase from "../../config/supabaseClient";
 
 export const StoryForm = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
-  const { state, dispatch } = useContext(FormContext);
+  const { state, dispatch } = useForm();
   const { formData } = state;
 
   const toggleFormVisibility = () => {
@@ -44,7 +44,6 @@ export const StoryForm = () => {
       console.error(`Unexpected error:`, err);
     }
   };
-
   return (
     <div id="form-container">
       {!isFormVisible ? (
@@ -59,10 +58,14 @@ export const StoryForm = () => {
             <br />
             <input
               type="text"
-              id="location"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
+              id="latLng"
+              name="latLng"
+              value={
+                formData.lat
+                  ? `${formData.lat.toFixed(3)}, ${formData.lng.toFixed(3)}`
+                  : "Click on map to select location."
+              }
+              readOnly
             />
             <br />
             <br />

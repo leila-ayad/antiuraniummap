@@ -4,7 +4,8 @@ import { formReducer } from "../reducers/FormReducer.jsx";
 
 export const FormProvider = ({ children }) => {
   const initialState = {
-    formData: { location: "", story: "", photo: null },
+    isVisible: false,
+    formData: { lat: "", lng: "", story: "", photo: null },
   };
 
   //useReducer returns an array

@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { Map, Popup } from "maplibre-gl";
 import { useStories } from "../context/StoriesContext";
+import { useForm } from "../context/FormContext";
 
 export const MapComponent = () => {
   const { stories } = useStories();
+  const { dispatch } = useForm();
 
   useEffect(() => {
     if (!stories) return;
@@ -71,6 +73,14 @@ export const MapComponent = () => {
 
       map.on("mouseleave", "places-layer", () => {
         map.getCanvas().style.cursor = "";
+      });
+    });
+
+    map.on("click", (e) => {
+      console.log(e);
+      dispatch({
+        type: "SET_FORM_DATA",
+        payload: { lat: e.lngLat.lat, lng: e.lngLat.lng },
       });
     });
 

@@ -8,16 +8,14 @@ import { FormProvider } from "./context/FormProvider.jsx";
 function App() {
   return (
     <>
-      <div id="title-container">
-        <Info />
-        <h2>Anti-Uranium Mapping Project</h2>
-        <FormProvider>
-          <StoryForm />
-        </FormProvider>
-      </div>
-      <StoriesProvider>
-        <MapComponent />
-      </StoriesProvider>
+      <Info />
+      <h2>Anti-Uranium Mapping Project</h2>
+      <FormProvider>
+        <StoryForm />
+        <StoriesProvider>
+          <MapComponent />
+        </StoriesProvider>
+      </FormProvider>
     </>
   );
 }

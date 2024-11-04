@@ -3,7 +3,11 @@
 export const formReducer = (state, action) => {
   switch (action.type) {
     //makes a copy of the state object, then merges the current formData with the incoming payload to update state
+    case "TOGGLE_FORM_VISIBILITY":
+      return !state.isVisible;
+
     case "SET_FORM_DATA":
+      console.log(action, state);
       return { ...state, formData: { ...state.formData, ...action.payload } };
     case "RESET_FORM":
       return { ...state, formData: { location: "", story: "", photo: null } };
