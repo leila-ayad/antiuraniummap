@@ -29,7 +29,8 @@ export const StoryForm = () => {
         lat: formData.lat,
         lng: formData.lng,
         story_body: formData.story,
-        photo_ids: null,
+        photo_ids: formData.photo,
+        approved: false,
       });
 
       if (error) {
@@ -89,6 +90,7 @@ export const StoryForm = () => {
               type="file"
               id="photo"
               name="photo"
+              multiple
               onChange={handleChange}
             />
             <br />

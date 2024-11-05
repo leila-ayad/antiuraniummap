@@ -14,13 +14,15 @@ export const StoriesProvider = ({ children }) => {
   useEffect(() => {
     const fetchStories = async () => {
       const { data, error } = await supabase.from("stories").select();
+      //filter to only pass along stories that have been approved
+      const approvedStories = data.filter((story) => story.approved);
       if (error) {
         dispatch({
           type: "SET_FETCH_ERROR",
           payload: `Error: ${error.message}`,
         });
       } else {
-        dispatch({ type: "SET_STORIES", payload: data });
+        dispatch({ type: "SET_STORIES", payload: approvedStories });
       }
     };
 
